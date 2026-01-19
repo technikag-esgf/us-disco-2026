@@ -8,7 +8,7 @@
 </head>
 <body>
         <label>Name</label>
-        <input type="text" name="name">
+        <input type="text" name="name" id="name">
         <label>Performance-Typ</label>
         <select id="select" onchange="checkforOther(this.options[this.selectedIndex].value)">
             <option value="" disabled selected>Bitte auswählen</option>
@@ -20,7 +20,7 @@
         <label id="form_other_label" style="display:none">Sonstiges</label>
         <input type="text" name="other" id="form_other" style="display:none">
         <label id="description_label" type="description_label">Liedname</label>
-        <input type="description" name="actdescription">
+        <input type="description" name="actdescription" id="actdescription">
         <button type="button" onclick="send()">Absenden</button>
 </body>
 </html>

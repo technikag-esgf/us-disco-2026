@@ -25,12 +25,11 @@ function checkforOther(option) {
 
 function send() {
 
-    var form = document.querySelector("form");
-    var formData = [];
-    formData.push("type", document.getElementById("select").value);
-    formData.push("other", document.getElementById("form_other").value);
-    formData.push("name", document.getElementById("name").value);
-    formData.push("description", document.getElementById("actdescription").value);
+    var formData = new FormData();
+    formData.append("type", document.getElementById("select").value);
+    formData.append("other", document.getElementById("form_other").value);
+    formData.append("name", document.getElementById("name").value);
+    formData.append("actdescription", document.getElementById("actdescription").value);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://technik.esgf.de/api/addPerformance.php", true);
     xhr.send(formData);
