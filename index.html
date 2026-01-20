@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="0" maximum-scale="1">
     <title>Document</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <label>Name</label>
+    <div class="center-div">
+        <label>Dein Name:</label>
         <input type="text" name="name" id="name">
         <label>Performance-Typ</label>
         <select id="select" onchange="checkforOther(this.options[this.selectedIndex].value)">
@@ -21,6 +23,7 @@
         <input type="text" name="other" id="form_other" style="display:none">
         <label id="description_label" type="description_label">Liedname</label>
         <input type="description" name="actdescription" id="actdescription">
-        <button type="button" onclick="send()">Absenden</button>
+        <button onclick="send()">Absenden</button>
+    </div>
 </body>
 </html>

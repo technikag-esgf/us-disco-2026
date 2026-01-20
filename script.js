@@ -1,7 +1,7 @@
 function checkforOther(option) {
     switch(option) {
         case "sonstiges":
-            document.getElementById("description_label").innerHTML = "Beschreibung";
+            document.getElementById("description_label").innerHTML = "Beschreibung/Liedname";
             document.getElementById("form_other_label").style.display = "unset";
             document.getElementById("form_other").style.display = "unset";
             break;
@@ -31,7 +31,7 @@ function send() {
     formData.append("name", document.getElementById("name").value);
     formData.append("actdescription", document.getElementById("actdescription").value);
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://technik.esgf.de/api/addPerformance.php", true);
+    xhr.open("POST", "https://10.0.0.89/api/addPerformance.php", true);
     xhr.send(formData);
     xhr.onreadystatechange = function() {
         console.log(xhr.status);
