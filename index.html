@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="0" maximum-scale="1">
-    <title>Document</title>
+    <title>Technik-AG US-Disco</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="center-div">
-        <label>Dein Name:</label>
-        <input type="text" name="name" id="name">
-        <label>Performance-Typ</label>
-        <select id="select" onchange="checkforOther(this.options[this.selectedIndex].value)">
-            <option value="" disabled selected>Bitte auswählen</option>
-            <option value="karaoke">Karaoke</option>
-            <option value="kostumperformance">Kostümperformance</option>
-            <option value="tanz">Tanz</option>
-            <option value="sonstiges">Sonstiges</option>
-        </select>
-        <label id="form_other_label" style="display:none">Sonstiges</label>
-        <input type="text" name="other" id="form_other" style="display:none">
-        <label id="description_label" type="description_label">Liedname</label>
-        <input type="description" name="actdescription" id="actdescription">
+        <div class="form-element">
+            <label>Dein Name:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="form-element">
+            <label>Performance-Typ:</label>
+            <select id="select" onchange="checkforOther(this.options[this.selectedIndex].value)">
+                <option value="" disabled selected>Bitte auswählen</option>
+                <option value="karaoke">Karaoke</option>
+                <option value="kostumperformance">Kostümperformance</option>
+                <option value="tanz">Tanz</option>
+                <option value="sonstiges">Sonstiges</option>
+            </select>
+        </div>
+        <div class="form-element" id="form_other" style="display: none;">
+            <label id="form_other_label">Performance-Typ:</label>
+            <input type="text" name="other" id="form_other">
+        </div>
+        <div class="form-element">
+            <label id="description_label" type="description_label">Liedname:</label>
+            <input type="description" name="actdescription" id="actdescription">
+        </div>
         <button onclick="send()">Absenden</button>
     </div>
 </body>

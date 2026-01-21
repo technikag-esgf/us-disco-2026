@@ -1,23 +1,19 @@
 function checkforOther(option) {
     switch(option) {
         case "sonstiges":
-            document.getElementById("description_label").innerHTML = "Beschreibung/Liedname";
-            document.getElementById("form_other_label").style.display = "unset";
-            document.getElementById("form_other").style.display = "unset";
+            document.getElementById("description_label").innerHTML = "Beschreibung/Liedname:";
+            document.getElementById("form_other").style.display = "flex";
             break;
         case "karaoke":
-            document.getElementById("description_label").innerHTML = "Liedname";
-            document.getElementById("form_other_label").style.display = "none";
+            document.getElementById("description_label").innerHTML = "Liedname:";
             document.getElementById("form_other").style.display = "none";
             break;
         case "kostumperformance":
-            document.getElementById("description_label").innerHTML = "Liedname";
-            document.getElementById("form_other_label").style.display = "none";
+            document.getElementById("description_label").innerHTML = "Liedname:";
             document.getElementById("form_other").style.display = "none";
             break;
         case "tanz":
-            document.getElementById("description_label").innerHTML = "Liedname";
-            document.getElementById("form_other_label").style.display = "none";
+            document.getElementById("description_label").innerHTML = "Liedname:";
             document.getElementById("form_other").style.display = "none";
             break;
     }
