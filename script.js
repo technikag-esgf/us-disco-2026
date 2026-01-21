@@ -29,9 +29,7 @@ function send() {
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "https://technik.esgf.de/api/addPerformance.php", true);
     xhr.send(formData);
-    xhr.onreadystatechange = function() {
-        console.log(xhr.status);
-    }
 
-    console.log(formData);
-}  
+    window.location.href = "send.html";
+
+}
