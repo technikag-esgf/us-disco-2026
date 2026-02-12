@@ -26,8 +26,15 @@ function send() {
     formData.append("other", document.getElementById("form_other").value);
     formData.append("name", document.getElementById("name").value);
     formData.append("actdescription", document.getElementById("actdescription").value);
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://technik.esgf.de/api/addPerformance.php", true);
-    xhr.send(formData);
-
+    fetch("https://technik.esgf.de/api/addPerformance.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
 }
