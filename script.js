@@ -30,6 +30,4 @@ function send() {
     xhr.open("POST", "https://technik.esgf.de/api/addPerformance.php", true);
     xhr.send(formData);
 
-    window.location.href = "send.html";
-
 }
