@@ -31,4 +31,6 @@ function send() {
         method: "POST",
         body: formData
     })
+
+    window.location.href = "send.html";
 }
