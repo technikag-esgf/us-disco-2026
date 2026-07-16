@@ -20,21 +20,35 @@ function checkforOther(option) {
 }
 
 function send() {
-
     var formData = new FormData();
     formData.append("type", document.getElementById("select").value);
     formData.append("other", document.getElementById("form_other").value);
     formData.append("name", document.getElementById("name").value);
     formData.append("actdescription", document.getElementById("actdescription").value);
-    fetch("http://technik.esgf.de/api/addPerformance.php", {
+
+    fetch("https://technik.esgf.de/api/addPerformance.php", {
         method: "POST",
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
+    .then(async response => {
+        const contentType = response.headers.get("content-type") || "";
+        let data;
+
+        if (contentType.includes("application/json")) {
+            data = await response.json();
+        } else {
+            data = await response.text();
+        }
+
+        if (!response.ok) {
+            throw new Error(typeof data === "string" ? data : "Die Übermittlung konnte nicht abgeschlossen werden.");
+        }
+
         console.log(data);
+        window.location.href = "send.html";
     })
     .catch(error => {
         console.error("Error:", error);
-    }); 
+        alert("Die Übermittlung konnte nicht gesendet werden. Bitte versuche es später erneut.");
+    });
 }
